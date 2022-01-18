@@ -1,13 +1,5 @@
 @import "variables";
 
-.button {
-  @include button;
-}
-
-.button.hollow {
-  @include button-hollow($text-color, $link-color-hover);
-}
-
 body {
   font-family: "Public Sans", Sans-serif;
   font-size: $font-size;
@@ -99,20 +91,6 @@ body,
   }
 }
 
-.main-nav__link a {
-  padding: 0 0 1rem 2rem;
-  font-size: $font-size-medium;
-}
-
-.main-nav__link--active a {
-  box-shadow: none;
-}
-
-.main-nav ul {
-  display: block;
-  float: right;
-}
-
 // Light on dark
 .tabs,
 .main-footer,
@@ -140,6 +118,15 @@ body,
 
 a {
   @include link;
+}
+
+.off-canvas .close-button {
+  color: $text-color;
+}
+
+hr,
+.reveal__header {
+  border-bottom-color: $text-color;
 }
 
 .reveal {
