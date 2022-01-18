@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/Platoniq/decidim-module-social_crowdfunding
+  revision: 32f9d3ae2217daea0603f69ede622fb03e32e5f9
+  branch: main
+  specs:
+    decidim-social_crowdfunding (0.0.1)
+      decidim-admin (= 0.24.3)
+      decidim-core (= 0.24.3)
+
+GIT
   remote: https://github.com/decidim/decidim
   revision: 1c93317cb30e761e0c81081458d9a66eda622768
   branch: release/0.24-stable
@@ -911,6 +920,7 @@ DEPENDENCIES
   decidim-conferences!
   decidim-decidim_awesome (~> 0.7.2)
   decidim-dev!
+  decidim-social_crowdfunding!
   faker (~> 2.14)
   figaro (~> 1.2)
   letter_opener_web (~> 1.3)
