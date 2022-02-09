@@ -38,6 +38,7 @@ jobs:
       - name: Setup & create Database
         run: |
           cd decidim-peertube
+          bundle install
           bundle exec rake decidim:generate_external_test_app
           bundle exec rails db:create db:schema:load
         env:
@@ -46,7 +47,9 @@ jobs:
           DATABASE_PASSWORD: postgres
 
       - name: Precompile assets
-        run: bundle exec rake assets:precompile
+        run: |
+          cd decidim-peertube
+          bundle exec rake assets:precompile
         env:
           RAILS_ENV: test
 
