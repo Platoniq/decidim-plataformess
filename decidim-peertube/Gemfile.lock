@@ -1,7 +1,5 @@
-GIT
-  remote: https://github.com/Platoniq/decidim-plataformess.git
-  revision: 5647956d6257180b910623829a3fb768320d4221
-  branch: feature/peertube
+PATH
+  remote: .
   specs:
     decidim-decidim_peertube (0.7.1)
       decidim-admin (= 0.24.3)
