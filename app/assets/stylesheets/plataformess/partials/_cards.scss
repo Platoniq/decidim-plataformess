@@ -3,7 +3,8 @@
 .card {
   background-color: $beige-darker;
   border-radius: $border-radius;
-  border: none;
+  border-color: $text-color;
+  border-width: 0px;
   color: $text-color;
 
   .card__link {

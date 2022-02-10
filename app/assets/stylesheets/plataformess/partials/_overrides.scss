@@ -207,3 +207,112 @@ hr,
 .home-pam__title {
   color: $beige-darker;
 }
+
+.home-pam__title,
+.space-stats__title {
+  color: $primary;
+}
+
+.home-pam__highlight .home-pam__data {
+  border: none;
+}
+
+.home-pam__lowlight {
+  border-top: 1px solid $text-color;
+}
+
+.space-stats__data::after {
+  border-color: $text-color;
+}
+
+.register__separator {
+  &::before {
+    background-color: $text-color;
+  }
+
+  .register__separator__text {
+    background-color: $beige-darker;
+  }
+}
+
+.tos-text {
+  background: white;
+  border: none;
+}
+
+.tags a {
+  border-color: $link-color;
+
+  &:hover {
+    border-color: $link-color-hover;
+  }
+}
+
+.card__text--status {
+  background: white;
+  margin-right: 4px;
+  padding: 2px;
+}
+
+.definition-data__item {
+  border-color: $text-color;
+}
+
+.card--list__data {
+  background: $beige-darker;
+}
+
+.card--list__data__icon .icon {
+  fill: $link-color;
+
+  &:hover {
+    fill: $link-color-hover;
+  }
+}
+
+.wrapper--inner {
+  background: $beige-darker;
+}
+
+.card--list .card--list__item:not(:last-child),
+.card--list :not(:last-child) .card--list__item {
+  border-color: $text-color;
+}
+
+.chart-tooltip,
+.conference-registration,
+.conference-speaker .speaker-bio,
+.add-message,
+.add-comment,
+.comment-thread {
+  background: $beige;
+  border: none;
+}
+
+.filters__section,
+.filters__section--general {
+  border-color: $text-color;
+}
+
+::placeholder {
+  color: $text-color;
+}
+
+.dropdown.menu > li > a {
+  background: $beige;
+  padding: 2px;
+}
+
+.data-picker.picker-single .picker-values div a,
+.data-picker .picker-prompt a,
+.is-dropdown-submenu,
+select,
+.inline-filters button[data-toggle] {
+  background: $beige;
+  border-color: $text-color;
+}
+
+.scope-picker.picker-content .picker-scrollable-content a:hover {
+  background: $link-color-hover;
+  color: $text-color;
+}
