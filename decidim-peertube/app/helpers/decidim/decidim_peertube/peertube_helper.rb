@@ -8,7 +8,8 @@ module Decidim
       end
 
       def peertube_embed_url
-        current_component.settings.video_url.gsub("watch", "embed")
+        url = current_component.settings.video_url
+        url.match?("watch") ? url.gsub("watch", "embed") : url.gsub("/w/", "/embed/")
       end
     end
   end
