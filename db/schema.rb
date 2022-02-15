@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_18_120634) do
+ActiveRecord::Schema.define(version: 2022_01_21_163624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -1172,6 +1172,37 @@ ActiveRecord::Schema.define(version: 2022_01_18_120634) do
     t.index ["privatable_to_type", "privatable_to_id"], name: "space_privatable_to_privatable_id"
   end
 
+  create_table "decidim_peertube_users", force: :cascade do |t|
+    t.bigint "decidim_user_id"
+    t.integer "peertube_uid"
+    t.integer "peertube_account_id"
+    t.string "peertube_username"
+    t.string "access_token"
+    t.datetime "access_token_expires_at"
+    t.integer "peertube_role"
+    t.string "peertube_role_label"
+    t.jsonb "account"
+    t.jsonb "video_channels"
+    t.jsonb "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["decidim_user_id"], name: "index_decidim_peertube_users_on_user"
+  end
+
+  create_table "decidim_peertube_videos", force: :cascade do |t|
+    t.bigint "decidim_component_id"
+    t.bigint "decidim_peertube_user_id"
+    t.string "peertube_video_id"
+    t.integer "peertube_channel_id"
+    t.string "video_url"
+    t.string "rtmp_url"
+    t.jsonb "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["decidim_component_id"], name: "index_decidim_peertube_videos_on_component"
+    t.index ["decidim_peertube_user_id"], name: "index_decidim_peertube_videos_on_decidim_peertube_user"
+  end
+
   create_table "decidim_proposals_collaborative_draft_collaborator_requests", force: :cascade do |t|
     t.bigint "decidim_proposals_collaborative_draft_id", null: false
     t.bigint "decidim_user_id", null: false
@@ -1681,6 +1712,9 @@ ActiveRecord::Schema.define(version: 2022_01_18_120634) do
   add_foreign_key "decidim_participatory_process_steps", "decidim_participatory_processes"
   add_foreign_key "decidim_participatory_processes", "decidim_organizations"
   add_foreign_key "decidim_participatory_processes", "decidim_scope_types"
+  add_foreign_key "decidim_peertube_users", "decidim_users"
+  add_foreign_key "decidim_peertube_videos", "decidim_components"
+  add_foreign_key "decidim_peertube_videos", "decidim_peertube_users"
   add_foreign_key "decidim_scope_types", "decidim_organizations"
   add_foreign_key "decidim_scopes", "decidim_organizations"
   add_foreign_key "decidim_scopes", "decidim_scope_types", column: "scope_type_id"

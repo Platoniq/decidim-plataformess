@@ -1,0 +1,63 @@
+<div class="card">
+  <div class="card-divider flex">
+    <%= link_to main_component_path(current_component), class: "button m-s", target: "_blank" do %>
+      <%= icon "eye" %>
+      <%= t(".visit") %>
+    <% end %>
+    <%= link_to edit_component_path, class: "button m-s" do %>
+      <%= icon "image" %>
+      <%= t(".embed") %>
+    <% end %>
+    <% unless current_peertube_user_valid? %>
+      <%= link_to new_peertube_session_path, class: "button m-s" do %>
+        <%= icon "person" %>
+        <%= t(".link_account") %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="card">
+  <div class="card-divider">
+    <h2 class="card-title">
+      <%= t(".peertube_videos") %>
+    </h2>
+  </div>
+  <%= render partial: "videos" %>
+</div>
+<% if current_peertube_user_valid? %>
+  <div class="card">
+    <div class="card-divider">
+      <h2 class="card-title">
+        <%= t(".account") %>
+      </h2>
+      <div class="button--title">
+        <%= link_to peertube_sessions_path, method: :delete, class: "button tiny" do %>
+          <%= icon "x" %>
+          <%= t(".remove_account") %>
+        <% end %>
+      </div>
+      <div class="button--title">
+        <%= link_to new_peertube_session_path, class: "button tiny" do %>
+          <%= icon "person" %>
+          <%= t(".change_account") %>
+        <% end %>
+      </div>
+    </div>
+    <div class="card-section">
+      <dl>
+        <dt>
+          <%= t(".username") %>:
+        </dt>
+        <dd>
+          <%= current_peertube_user.peertube_username %>
+        </dd>
+        <dt>
+          <%= t(".channels") %>:
+        </dt>
+        <dd>
+          <%= render partial: "channels" %>
+        </dd>
+      </dl>
+    </div>
+  </div>
+<% end %>
