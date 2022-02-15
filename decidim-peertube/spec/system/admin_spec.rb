@@ -131,19 +131,30 @@ describe "Visit the admin page", type: :system do
 
     describe "manage videos" do
       let(:video_url) { "https://example.org/videos/watch/fake-video-url" }
+      let(:other_video_url) { "https://example.org/videos/watch/other-fake-video-url" }
       let(:embed_url) { "https://example.org/videos/embed/fake-video-url" }
+      let(:other_embed_url) { "https://example.org/videos/embed/other-fake-video-url" }
       let!(:peertube_video) { create(:peertube_video, component: component, peertube_user: peertube_user, video_url: video_url) }
+      let!(:other_peertube_video) { create(:peertube_video, component: component, peertube_user: peertube_user, video_url: other_video_url) }
+
+      before do
+        stub_api_request(method: :delete, data: {}, headers: headers)
+      end
 
       it "allows to select a live video and embed it in public component" do
         visit main_component_path(component)
-        expect(page.find("iframe")[:src]).not_to eq(embed_url)
+        expect(page.find("iframe")[:src]).to eq(embed_url)
 
         visit manage_component_path(component)
 
-        click_link "Embed this video in the component"
+        within ".card:nth-child(2) tbody tr:last-child" do
+          click_link "Embed this video in the component"
+        end
+
+        click_link "OK"
 
         visit main_component_path(component)
-        expect(page.find("iframe")[:src]).to eq(embed_url)
+        expect(page.find("iframe")[:src]).to eq(other_embed_url)
       end
 
       it "allows to delete a live video" do
@@ -151,7 +162,11 @@ describe "Visit the admin page", type: :system do
 
         expect(page).to have_content video_url
 
-        click_link "Delete"
+        within ".card:nth-child(2) tbody tr:first-child" do
+          click_link "Delete"
+        end
+
+        click_link "OK"
 
         expect(page).not_to have_content video_url
         expect(Decidim::DecidimPeertube::PeertubeVideo.find_by(id: peertube_video.id)).to be_blank
