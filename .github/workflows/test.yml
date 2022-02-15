@@ -38,9 +38,7 @@ jobs:
       - name: Bundle Install
         run: bundle install
       - name: Setup & create Database
-        run: |
-          bundle exec rake decidim:generate_external_test_app
-          bundle exec rails db:create db:schema:load
+        run: bundle exec rails db:create db:schema:load
         env:
           RAILS_ENV: test
           DATABASE_USERNAME: postgres
