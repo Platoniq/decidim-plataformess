@@ -131,7 +131,7 @@ describe "Visit the admin page", type: :system do
 
     describe "manage videos" do
       let(:video_url) { "https://example.org/videos/watch/fake-video-url" }
-      let(:other_video_url) { "https://example.org/videos/w/other-fake-video-url" }
+      let(:other_video_url) { "https://example.org/videos/watch/other-fake-video-url" }
       let(:embed_url) { "https://example.org/videos/embed/fake-video-url" }
       let(:other_embed_url) { "https://example.org/videos/embed/other-fake-video-url" }
       let!(:peertube_video) { create(:peertube_video, component: component, peertube_user: peertube_user, video_url: video_url) }
