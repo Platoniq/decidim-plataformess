@@ -49,3 +49,5 @@ config/application.yml
 Capfile
 
 .stuff
+
+.rubocop*
