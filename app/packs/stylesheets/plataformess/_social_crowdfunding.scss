@@ -1,0 +1,24 @@
+.thermometer-wrapper .thermometer-container {
+  color: $text-color;
+
+  .thermometer .left {
+    background-color: $beige;
+  }
+
+  .labels {
+    color: $text-color;
+
+    .icon {
+      border-bottom-color: $text-color;
+    }
+  }
+}
+
+.section-heading[data-toggle] {
+  &::after {
+    content: "+";
+  }
+  .icon {
+    display: none;
+  }
+}
