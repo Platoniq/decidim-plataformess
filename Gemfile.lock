@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/Platoniq/decidim-module-social_crowdfunding
-  revision: 17c70d30be738e5cbf8d2f53c4ea7511af36fd40
-  branch: chore/upgrade-0.25
+  revision: e5c8641e1c52c9fafee20005d0030c01480f1ba6
+  branch: release/0.25-stable
   specs:
     decidim-social_crowdfunding (0.1.0)
       decidim-admin (>= 0.25.0, < 0.26)
