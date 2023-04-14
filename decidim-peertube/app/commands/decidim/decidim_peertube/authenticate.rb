@@ -3,7 +3,7 @@
 module Decidim
   module DecidimPeertube
     # A command with the business logic for linking a Peertube account with a decidim user
-    class Authenticate < Rectify::Command
+    class Authenticate < Decidim::Command
       # Public: Initializes the command.
       #
       # form         - A form object with the params.

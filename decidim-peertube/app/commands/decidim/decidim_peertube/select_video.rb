@@ -3,7 +3,7 @@
 module Decidim
   module DecidimPeertube
     # A command with all the business logic when selecting a video for a component
-    class SelectVideo < Rectify::Command
+    class SelectVideo < Decidim::Command
       # Public: Initializes the command.
       #
       # video - The peertube_video.

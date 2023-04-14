@@ -3,7 +3,7 @@
 module Decidim
   module DecidimPeertube
     # A command with all the business logic when destroying a video
-    class DestroyVideo < Rectify::Command
+    class DestroyVideo < Decidim::Command
       def initialize(video, peertube_user)
         @video = video
         @peertube_user = peertube_user
