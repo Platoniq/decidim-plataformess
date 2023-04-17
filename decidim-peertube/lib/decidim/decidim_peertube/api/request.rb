@@ -23,6 +23,7 @@ module Decidim
           @response = parse_response(response)
         end
 
+        # rubocop:disable Lint/EmptyBlock
         def post(path, params)
           response = Faraday.post(api_path(path), base_params.merge(params)) do |request|
           end
@@ -30,6 +31,7 @@ module Decidim
           @response = parse_response(response)
         end
 
+        # rubocop:enable Lint/EmptyBlock
         def post_authenticated(token, path, params = {})
           response = Faraday.post(api_path(path), base_params.merge(params)) do |request|
             authorize(request, token)
