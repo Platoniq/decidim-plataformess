@@ -8,7 +8,7 @@ FactoryBot.define do
     peertube_username { Faker::Internet.username }
 
     access_token { Faker::Number.hexadecimal(digits: 32) }
-    access_token_expires_at { Time.zone.now + 1.day }
+    access_token_expires_at { 1.day.from_now }
 
     peertube_role { Faker::Number.between(from: 1, to: 4) }
     peertube_role_label { Faker::Lorem.word }

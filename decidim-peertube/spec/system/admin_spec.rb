@@ -45,7 +45,7 @@ describe "Visit the admin page", type: :system do
 
     let(:headers) do
       {
-        "Authorization": "Bearer #{access_token}"
+        Authorization: "Bearer #{access_token}"
       }
     end
 
@@ -93,7 +93,7 @@ describe "Visit the admin page", type: :system do
 
       let(:headers) do
         {
-          "Authorization": "Bearer #{access_token}"
+          Authorization: "Bearer #{access_token}"
         }
       end
 
