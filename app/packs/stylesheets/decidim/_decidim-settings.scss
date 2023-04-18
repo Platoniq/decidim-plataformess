@@ -1,0 +1,22 @@
+// This is a file that can be overridden by the application in order to override
+// some of the Foundation/Decidim SCSS settings and variables after the default
+// settings have been loaded.
+//
+// To override styles use decidim_application.scss
+//
+// By default this is empty.
+
+$brand: #2d4057;
+$beige: #f3deca;
+$beige-darker: #e6d1bf;
+$background: $beige;
+$text-color: $brand;
+$primary: #4097aa;
+$secondary: #fa9483;
+$link-color: $primary;
+$link-color-hover: $secondary;
+$footer-bg: $brand;
+$font-size: 16px;
+$font-size-medium: 20px;
+$white: white;
+$border-radius: 0;

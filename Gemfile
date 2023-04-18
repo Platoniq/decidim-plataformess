@@ -3,12 +3,13 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
-DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "release/0.24-stable" }.freeze
+DECIDIM_BRANCH = "release/0.25-stable"
+DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: DECIDIM_BRANCH }.freeze
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
-gem "decidim-decidim_awesome", "~> 0.7.2"
-gem "decidim-social_crowdfunding", git: "https://github.com/Platoniq/decidim-module-social_crowdfunding", branch: "main"
+gem "decidim-decidim_awesome", "~> 0.8"
+gem "decidim-social_crowdfunding", git: "https://github.com/Platoniq/decidim-module-social_crowdfunding", branch: DECIDIM_BRANCH
 # gem "decidim-consultations", DECIDIM_VERSION
 # gem "decidim-elections", DECIDIM_VERSION
 # gem "decidim-initiatives", DECIDIM_VERSION
@@ -23,8 +24,6 @@ gem "puma", ">= 5.0.0"
 gem "uglifier", "~> 4.1"
 
 gem "faker", "~> 2.14"
-
-gem "wicked_pdf", "~> 1.4"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
