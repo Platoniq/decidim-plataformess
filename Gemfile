@@ -3,13 +3,17 @@
 source "https://rubygems.org"
 
 ruby RUBY_VERSION
+
 DECIDIM_BRANCH = "release/0.26-stable"
+
 DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: DECIDIM_BRANCH }.freeze
 
 gem "decidim", DECIDIM_VERSION
 gem "decidim-conferences", DECIDIM_VERSION
 gem "decidim-decidim_awesome", "~> 0.8"
+
 gem "decidim-social_crowdfunding", git: "https://github.com/Platoniq/decidim-module-social_crowdfunding", branch: "chore/upgrade-0.26"
+
 # gem "decidim-consultations", DECIDIM_VERSION
 # gem "decidim-elections", DECIDIM_VERSION
 # gem "decidim-initiatives", DECIDIM_VERSION
