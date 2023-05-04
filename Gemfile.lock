@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/Platoniq/decidim-module-social_crowdfunding
-  revision: cd2bc99040d8def8d31d19a90f1e805b671e2224
-  branch: chore/upgrade-0.26
+  revision: 5b382d5c846033e15997bdc9c12c798be7988f84
+  branch: release/0.26-stable
   specs:
     decidim-social_crowdfunding (0.1.0)
       decidim-admin (>= 0.25.0, < 0.27)
@@ -112,7 +112,6 @@ GIT
       searchlight (~> 4.1)
       seven_zip_ruby (~> 1.3)
       social-share-button (~> 1.2, >= 1.2.1)
-
       valid_email2 (~> 2.1)
       webpacker (= 6.0.0.rc.5)
       wisper (~> 2.0)
@@ -186,13 +185,14 @@ GIT
       decidim-forms (= 0.26.5)
     decidim-verifications (0.26.5)
       decidim-core (= 0.26.5)
+
 PATH
   remote: decidim-peertube
   specs:
     decidim-decidim_peertube (0.8.0)
-
       decidim-admin (>= 0.25.0, < 0.27)
       decidim-core (>= 0.25.0, < 0.27)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -607,7 +607,6 @@ GEM
       net-smtp
       premailer (~> 1.7, >= 1.7.9)
     public_suffix (5.0.1)
-
     puma (5.6.5)
       nio4r (~> 2.0)
     raabro (1.4.0)
