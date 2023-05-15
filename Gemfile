@@ -16,7 +16,7 @@ gem "decidim-social_crowdfunding", git: "https://github.com/Platoniq/decidim-mod
 # gem "decidim-templates", DECIDIM_VERSION
 
 # gem "decidim-peertube", git: "https://github.com/Platoniq/decidim-plataformess.git", branch: "feature/peertube"
-gem "decidim-decidim_peertube", path: "./decidim-peertube"
+gem "decidim-peertube", git: "https://github.com/Platoniq/decidim-module-peertube", branch: "chore/upgrade-0.25"
 
 gem "bootsnap", "~> 1.4"
 

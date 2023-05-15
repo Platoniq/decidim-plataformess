@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/Platoniq/decidim-module-peertube
+  revision: 26826be0cbaeda3691c5321eca471cdb994f07d6
+  branch: chore/upgrade-0.25
+  specs:
+    decidim-peertube (0.1.0)
+      decidim-admin (>= 0.25.0, < 0.27)
+      decidim-core (>= 0.25.0, < 0.27)
+
+GIT
   remote: https://github.com/Platoniq/decidim-module-social_crowdfunding
   revision: e5c8641e1c52c9fafee20005d0030c01480f1ba6
   branch: release/0.25-stable
@@ -188,13 +197,6 @@ GIT
       decidim-forms (= 0.25.2)
     decidim-verifications (0.25.2)
       decidim-core (= 0.25.2)
-
-PATH
-  remote: decidim-peertube
-  specs:
-    decidim-decidim_peertube (0.8.0)
-      decidim-admin (>= 0.25.0, < 0.26)
-      decidim-core (>= 0.25.0, < 0.26)
 
 GEM
   remote: https://rubygems.org/
@@ -511,7 +513,7 @@ GEM
       actionmailer (>= 3.2)
       letter_opener (~> 1.0)
       railties (>= 3.2)
-    listen (3.2.1)
+    listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.3.1)
@@ -536,7 +538,6 @@ GEM
     mime-types-data (3.2023.0218.1)
     mini_magick (4.12.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.1)
     minitest (5.18.0)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.27)
@@ -561,8 +562,7 @@ GEM
     netrc (0.11.0)
     nio4r (2.5.9)
     nobspw (0.6.2)
-    nokogiri (1.13.10)
-      mini_portile2 (~> 2.8.0)
+    nokogiri (1.13.10-x86_64-linux)
       racc (~> 1.4)
     oauth (1.1.0)
       oauth-tty (~> 1.0, >= 1.0.1)
@@ -868,7 +868,7 @@ GEM
     zeitwerk (2.6.7)
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   bootsnap (~> 1.4)
@@ -883,8 +883,8 @@ DEPENDENCIES
   decidim!
   decidim-conferences!
   decidim-decidim_awesome (~> 0.8)
-  decidim-decidim_peertube!
   decidim-dev!
+  decidim-peertube!
   decidim-social_crowdfunding!
   faker (~> 2.14)
   figaro (~> 1.2)
@@ -903,4 +903,4 @@ RUBY VERSION
    ruby 2.7.5p203
 
 BUNDLED WITH
-   2.3.5
+   2.4.12
