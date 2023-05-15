@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
 require "decidim/core/test/factories"
-require "decidim/decidim_peertube/test/factories"
+require "decidim/peertube/test/factories"
