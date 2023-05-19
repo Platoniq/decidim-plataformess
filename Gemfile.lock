@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/Platoniq/decidim-module-peertube
-  revision: 10640f1dfe89afd0e93f748ca7d6c7b60fb5d341
-  branch: chore/upgrade-0.27
+  revision: 71e774a91bf03dc9ca70b018b7a8baf946a6306a
+  branch: main
   specs:
     decidim-peertube (0.2.0)
       decidim-admin (>= 0.27.0, < 0.28)
