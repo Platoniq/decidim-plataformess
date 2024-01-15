@@ -12,7 +12,7 @@ module Decidim
 
         def conferences
           @conferences ||= if current_scope.nil?
-                             original_conferences
+                             original_conferences.query
                            elsif current_scope == "none"
                              original_conferences.query.where(scope: nil)
                            else
