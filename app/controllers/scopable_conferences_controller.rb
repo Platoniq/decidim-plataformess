@@ -18,7 +18,9 @@ class ScopableConferencesController < Decidim::Conferences::ApplicationControlle
   end
 
   def scope_type
-    @scope_type ||= Decidim::ScopeType.where("name->>? ilike ?", "ca", "conferència").first
+    @scope_type ||= Decidim::ScopeType.where("name->>? ilike ?",
+                                             ENV.fetch("DECIDIM_CONFERENCE_SCOPE_TYPE_LOCALE", nil),
+                                             ENV.fetch("DECIDIM_CONFERENCE_SCOPE_TYPE_VALUE", nil)).first
   end
 
   alias collection scopes
