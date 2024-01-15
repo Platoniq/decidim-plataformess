@@ -15,6 +15,12 @@ checksums = [
     }
   },
   {
+    package: "decidim-conferences",
+    files: {
+      "/app/controllers/decidim/conferences/conferences_controller.rb" => "797899ada946b487a3c8c7312f0c14eb"
+    }
+  },
+  {
     package: "decidim-core",
     files: {
       "/app/models/decidim/scope.rb" => "ff4f1fca1e564f29af58018ca7c60aa1"

@@ -1,0 +1,28 @@
+<% add_decidim_meta_tags(title: t("conferences.index.title", scope: "decidim")) %>
+
+<%
+  edit_link(
+    decidim_admin_conferences.conferences_path,
+    :read,
+    :conference_list
+  )
+%>
+
+<section id="scopes-grid" class="section row collapse">
+  <div class="row small-up-1 medium-up-2 large-up-3 card-grid">
+    <%= render(collection) %>
+    <div class="column">
+      <div class="card card--scope">
+        <div class="card__content">
+          <div class="card__header">
+            <%= link_to Decidim::Conferences::Engine.routes.url_helpers.conferences_path(filter: { with_scope: "none" }), class: "card__link" do %>
+              <div class="card__title">
+                <%= t(".other") %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
