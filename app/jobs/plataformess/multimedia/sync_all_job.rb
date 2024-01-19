@@ -18,7 +18,7 @@ module Plataformess
       private
 
       def store_result(organization_id, result)
-        File.write(Rails.root.join("tmp/multimedia_#{organization_id}.json"), result.to_json)
+        File.write(Rails.root.join("tmp/multimedia/#{organization_id}.json"), result.to_json)
       end
 
       def remove_duplicates(media_links)

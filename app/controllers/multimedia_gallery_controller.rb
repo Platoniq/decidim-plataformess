@@ -7,7 +7,7 @@ class MultimediaGalleryController < Decidim::ApplicationController
 
   def media_links
     @media_links ||= begin
-      JSON.parse(File.read(Rails.root.join("tmp/multimedia_#{current_organization.id}.json"))).map(&:deep_symbolize_keys)
+      JSON.parse(File.read(Rails.root.join("tmp/multimedia/#{current_organization.id}.json"))).map(&:deep_symbolize_keys)
     rescue Errno::ENOENT
       []
     end
