@@ -12,7 +12,7 @@
         <% if media_link[:scope].present? %>
           <ul class="tags"><li><a><%= translated_attribute media_link[:scope] %></a></li></ul>
         <% end %>
-        <%= link_to t("conferences.multimedia_gallery.go_to_conference"), Decidim::Conferences::Engine.routes.url_helpers.conference_path(slug: media_link[:conference_slug]), target: '_blank' %>
+        <%= link_to t("conferences.multimedia_gallery.go_to_conference"), Decidim::Conferences::Engine.routes.url_helpers.conference_path(slug: media_link[:conference_slug]), target: "_blank" %>
       </div>
     </div>
   <% end %>
