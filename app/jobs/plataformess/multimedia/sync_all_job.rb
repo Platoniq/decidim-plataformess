@@ -10,9 +10,7 @@ module Plataformess
         Rails.logger.info "SyncAllJob: #{media_links.count} media links to process"
         return if media_links.empty?
 
-        media_links = media_links.map { |media_link| process_media_link(media_link) }
-        media_links = remove_duplicates(media_links)
-        store_result(organization_id, media_links)
+        store_result(organization_id, media_links.map { |media_link| process_media_link(media_link) })
       end
 
       private
@@ -21,19 +19,19 @@ module Plataformess
         File.write(Rails.root.join("tmp/multimedia/#{organization_id}.json"), result.to_json)
       end
 
-      def remove_duplicates(media_links)
-        media_links.uniq { |media_link| media_link[:link] }
-      end
-
       def media_links(organization_id)
-        @media_links ||= Decidim::Conferences::MediaLink.joins(:conference)
+        @media_links ||= Decidim::Conferences::MediaLink.left_outer_joins(conference: :scope)
                                                         .where(conference: { decidim_organization_id: organization_id })
+                                                        .order(updated_at: :desc)
       end
 
       def process_media_link(media_link)
         {
           title: media_link.title,
-          link: process_link(media_link.link)
+          date: media_link.date,
+          link: process_link(media_link.link),
+          conference_slug: media_link.conference.slug,
+          scope: media_link.conference.scope.present? ? media_link.conference.scope.name : nil
         }
       end
 

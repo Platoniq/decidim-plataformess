@@ -1,0 +1,39 @@
+.multimedia_gallery {
+  .row {
+    display: flex;
+  }
+
+  @media screen and (max-width: 596px) {
+    .row {
+      flex-direction: column-reverse;
+      padding-bottom: 10%;
+    }
+  }
+
+  .column {
+    flex: 1;
+  }
+
+  .info{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    padding: 5%;
+    overflow: hidden;
+  }
+
+  .tags {
+    li {
+      a {
+        cursor: default;
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+          border-color: $link-color;
+        }
+      }
+    }
+  }
+}
