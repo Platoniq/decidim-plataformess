@@ -9,3 +9,8 @@ data_job:
   cron: "3 3 * * *"
   class: "DataPortabilityWorker"
   queue: default
+
+multimedia_gallery_job:
+  cron: "0 1 * * *"
+  class: "MultimediaGalleryWorker"
+  queue: default

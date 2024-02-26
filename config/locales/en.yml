@@ -1,5 +1,8 @@
 ---
 en:
+  conferences:
+    multimedia_gallery:
+      go_to_conference: Go to conference
   scopable_conferences:
     index:
       other: Other conferences

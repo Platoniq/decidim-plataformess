@@ -1,5 +1,8 @@
 ---
 ca:
+  conferences:
+    multimedia_gallery:
+      go_to_conference: Anar a la jornada
   scopable_conferences:
     index:
       other: Altres jornades
