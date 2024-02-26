@@ -1,3 +1,5 @@
 ---
 en:
-  hello: Hello world
+  conferences:
+    multimedia_gallery:
+      go_to_conference: Go to conference
